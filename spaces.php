@@ -150,10 +150,10 @@ class Space {
   /*
   Uploads text.
   */
-  function upload($text, $saveAs, $privacy = "private") {
+  function upload($text, $saveAs, $privacy = "private", $options = array()) {
     if($privacy == "public") { $privacy = "public-read"; }
 
-    return SpacesResult($this->s3->upload($this->name, $saveAs, $text, $privacy));
+    return SpacesResult($this->s3->upload($this->name, $saveAs, $text, $privacy, $options));
   }
 
 
